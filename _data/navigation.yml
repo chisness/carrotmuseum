@@ -5,8 +5,16 @@ main:
 #     url: /categories/
 #   - title: "Tags"
 #     url: /tags/
-    # - title: "Mailing List"
-    #   url: /mailinglist
+    - title: "Carrot Items"
+      url: /carrotitems
+    - title: "All Art"
+      url: /allart
+    - title: "All Objects"
+      url: /allobjects
+    - title: "Visit"
+      url: /visit
+    - title: "Shop"
+      url: /shop
 # nav:
 #   - title: 1. Background
 #     children:

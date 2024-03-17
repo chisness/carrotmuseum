@@ -5,8 +5,8 @@ main:
 #     url: /categories/
 #   - title: "Tags"
 #     url: /tags/
-    - title: "Carrot Items"
-      url: /carrotitems
+    - title: "Carrot Works"
+      url: /carrotworks
     - title: "All Art"
       url: /allart
     - title: "All Objects"

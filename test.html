@@ -1,31 +1,13 @@
-// This function will be called when the file input changes
-function handleFileChange(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const csv = event.target.result;
-        // Convert CSV text to a list of objects
-        const data = csvToArray(csv);
-        // Display the data or use it elsewhere in your app
-        console.log(data); // for debugging
-        document.getElementById('output').innerText = JSON.stringify(data, null, 2);
-    };
-    reader.readAsText(file);
-}
-
-// Converts CSV text to a JavaScript array of objects
-function csvToArray(csv, delimiter = ',') {
-    const lines = csv.split('\n');
-    // Split the first line into headers
-    const headers = lines[0].split(delimiter);
-    // Map the remaining lines to objects
-    return lines.slice(1).map(line => {
-        const values = line.split(delimiter);
-        return headers.reduce((obj, header, index) => {
-            obj[header] = values[index];
-            return obj;
-        }, {});
-    });
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to JavaScript Object</title>
+</head>
+<body>
+    <input type="file" id="csvFileInput" accept=".csv" onchange="handleFiles(this.files)">
+    <div id="output"></div>
+    <script src="script.js"></script>
+</body>
+</html>

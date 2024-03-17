@@ -8,8 +8,6 @@ permalink: /
 # toc_sticky: true
 layout: single
 ---
-**Welcome to the Carrot Museum**
-
 ![Carrot Museum](./assets/cml.png)
 
 <div id="output"></div>

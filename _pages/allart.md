@@ -8,3 +8,7 @@ permalink: /allart
 # toc_sticky: true
 ---
 All Art Page
+
+<div id="output"></div>
+
+<script src="script.js"></script>

@@ -1,6 +1,6 @@
 console.log('Script started');
 
-fetch('Carrotmuseumcsv.csv')
+fetch('../Carrotmuseumcsv.csv')
     .then(response => {
         console.log('Fetch response received');
         if (!response.ok) {
@@ -44,13 +44,13 @@ function displayArt(artData) {
 
         const img = document.createElement('img');
         if (item.Photo) {
-            // Remove leading slash if present
-            const photoPath = item.Photo.startsWith('/') ? item.Photo.slice(1) : item.Photo;
+            // Adjust the path to go up one directory and then to the images folder
+            const photoPath = '../' + item.Photo.replace(/^\//, '');
             img.src = photoPath;
             console.log(`Image ${index} src:`, img.src);
         } else {
             console.warn(`No photo path for item ${index}`);
-            img.src = 'path/to/placeholder-image.jpg'; // Replace with actual placeholder image path
+            img.src = '../path/to/placeholder-image.jpg'; // Replace with actual placeholder image path
         }
         img.alt = item.Item || `Art piece ${index + 1}`;
         img.style.maxWidth = '300px'; // Adjust as needed
@@ -62,4 +62,4 @@ function displayArt(artData) {
         artDiv.appendChild(info);
         output.appendChild(artDiv);
     });
-} 
+}

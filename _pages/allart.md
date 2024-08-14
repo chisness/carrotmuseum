@@ -9,6 +9,8 @@ permalink: /allart
 ---
 All Art Page
 
+TEST! 
+
 <div id="output"></div>
 
 <script src="https://carrotmuseum.org/script.js"></script>

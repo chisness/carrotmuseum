@@ -2,7 +2,7 @@ fetch('Carrotmuseumcsv.csv')
     .then(response => response.text())
     .then(csv => {
         const data = csvToArray(csv);
-        document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+        displayArt(data);
     });
 
 function csvToArray(str, delimiter = ',') {
@@ -14,5 +14,27 @@ function csvToArray(str, delimiter = ',') {
             object[header] = values[index];
             return object;
         }, {});
+    });
+}
+
+function displayArt(artData) {
+    const output = document.getElementById('output');
+    output.innerHTML = ''; // Clear any existing content
+
+    artData.forEach(item => {
+        const artDiv = document.createElement('div');
+        artDiv.className = 'art-item';
+
+        const img = document.createElement('img');
+        img.src = item.Photo;
+        img.alt = item.Item;
+        img.style.maxWidth = '300px'; // Adjust as needed
+
+        const info = document.createElement('p');
+        info.innerHTML = `<strong>${item.Item}</strong> by ${item.Artist}<br>Size: ${item.Size}`;
+
+        artDiv.appendChild(img);
+        artDiv.appendChild(info);
+        output.appendChild(artDiv);
     });
 }

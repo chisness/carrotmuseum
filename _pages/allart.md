@@ -11,4 +11,4 @@ All Art Page
 
 <div id="output"></div>
 
-<script src="script.js"></script>
+<script src="https://carrotmuseum.org/script.js"></script>

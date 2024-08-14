@@ -62,4 +62,4 @@ function displayArt(artData) {
         artDiv.appendChild(info);
         output.appendChild(artDiv);
     });
-}
+} 
